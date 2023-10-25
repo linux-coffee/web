@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+        {% for todo in todos.object_list %}
+
+        <div class="card mb-3">
+            <img class="img-fluid" style="height: 300px; ;" src="{{ todo.img.url }}" alt="{{ todo.title }}">
+            <div class="card-body">
+              <h5 class="card-title"><a href="{% url 'details' todo.id %}">{{ todo.title }}</a></h5>
+              <p class="card-text">{{ todo.body }}</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        {% endfor %}
+        <center>
+          {%if todos.has_previous %}
+              <a href="?page={{todos.previous_page_number}}"><</a>
+          {% endif %}
+          <span>{{todos.number}}</span>
+         
+          {%if todos.has_next %}
+              <a href="?page={{todos.next_page_number}}">></a>
+          {% endif %}
+        </center>
+{% endblock %}

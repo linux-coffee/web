@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card mb-3" style="height: auto;" dir="rtl">
+    
+    <div class="container" style="padding: 30px;">
+        {% for abo in about %}
+        <h3>درباره من</h3>
+        <hr>
+        <img src="{{ abo.img.url }}" alt="" class="img-thumbnail">
+        <p>I'm MimJimSad </p>
+        <p>یه برنامه نویس و مجری که کامپیوتر و آی تی خونده و میشه گفت یه گیک هستم.
+            یه مدرس برنامه نویسی و امنیت که علاقمندی های زیادی داره که مهمترینشون قهوه و دنیای نرم افزار های آزاد و سیستم عامل گنو/لینوکس و کتاب هستندو کلی فیلم و سریال و موسیقی که اینجا جانمیشه و هرچیزی که مربوز به کامپیوتر ها باشه...
+        </p>
+        <p>
+            فرانت اند رو خیلی دوست ندارم!
+            برنامه نویس وب با جنگو،
+            مدرس پایتون و اسکرچ،
+            مدرس و علاقمند به امنیت
+        </p>
+        <a href="https://www.linkedin.com/in/mimjimsad/">لینکدین</a>
+        <br>
+        <a href="https://t.me/mimjimsad">تلگرام</a>
+        <br>
+        <a href="https://youtube.com/@mimjimsad">یوتوب</a>
+        <br>
+        <a href="https://instagram.com/sabrjoo.mohammad">اینستاگرام</a>
+        <br>
+        <a href="https://virgool.io/@mimjimsad">ویرگول</a>
+    </div> 
+        {% endfor %}
+</div>
+{% endblock %}
